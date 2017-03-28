@@ -77,7 +77,7 @@ app.get('/login',
 app.get('/login/twitter',
   passport.authenticate('twitter'));
 
-app.get('/login/twitter/return', 
+app.get('/login/twitter/return',
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
@@ -87,6 +87,13 @@ app.get('/profile',
   require('connect-ensure-login').ensureLoggedIn(),
   function(req, res){
     res.render('profile', { user: req.user });
+  });
+
+app.get('/logout',
+  function(req, res){
+    req.session.destroy(function (err) {
+      res.redirect('/');
+    });
   });
 
 app.listen(3000);
