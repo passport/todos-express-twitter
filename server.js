@@ -60,7 +60,7 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveU
 // Initialize Passport and restore authentication state, if any, from the
 // session.
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session({ cookie: { secure: true } }));
 
 
 // Define routes.
@@ -77,7 +77,7 @@ app.get('/login',
 app.get('/login/twitter',
   passport.authenticate('twitter'));
 
-app.get('/login/twitter/return', 
+app.get('/login/twitter/return',
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
