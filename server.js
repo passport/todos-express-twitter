@@ -2,6 +2,13 @@ var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-twitter').Strategy;
 
+var trustProxy = false;
+if (process.env.DYNO) {
+  // Apps on heroku are behind a trusted proxy
+  trustProxy = true;
+}
+console.log('TRUST PROXY? ' + trustProxy);
+
 
 // Configure the Twitter strategy for use by Passport.
 //
@@ -13,7 +20,8 @@ var Strategy = require('passport-twitter').Strategy;
 passport.use(new Strategy({
     consumerKey: process.env['TWITTER_CONSUMER_KEY'],
     consumerSecret: process.env['TWITTER_CONSUMER_SECRET'],
-    callbackURL: '/oauth/callback/twitter.com'
+    callbackURL: '/oauth/callback/twitter.com',
+    proxy: trustProxy
   },
   function(token, tokenSecret, profile, cb) {
     // In this example, the user's Twitter profile is supplied as the user
