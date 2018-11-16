@@ -13,7 +13,7 @@ var Strategy = require('passport-twitter').Strategy;
 passport.use(new Strategy({
     consumerKey: process.env['TWITTER_CONSUMER_KEY'],
     consumerSecret: process.env['TWITTER_CONSUMER_SECRET'],
-    callbackURL: '/oauth/callback/twitter'
+    callbackURL: '/oauth/callback/twitter.com'
   },
   function(token, tokenSecret, profile, cb) {
     // In this example, the user's Twitter profile is supplied as the user
@@ -81,7 +81,7 @@ app.get('/login',
 app.get('/login/twitter',
   passport.authenticate('twitter'));
 
-app.get('/oauth/callback/twitter',
+app.get('/oauth/callback/twitter.com',
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
@@ -93,4 +93,4 @@ app.get('/profile',
     res.render('profile', { user: req.user });
   });
 
-app.listen(process.env['PORT'] || 3000);
+app.listen(process.env['PORT'] || 8080);
