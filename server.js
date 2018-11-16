@@ -7,7 +7,6 @@ if (process.env.DYNO) {
   // Apps on heroku are behind a trusted proxy
   trustProxy = true;
 }
-console.log('TRUST PROXY? ' + trustProxy);
 
 
 // Configure the Twitter strategy for use by Passport.
