@@ -1,0 +1,6 @@
+{
+  "name": "ifify Public IP Address API",
+  "description": "A RESTful API for obtaining a system's public API address.",
+  "repository": "https://github.com/modulate/ipifyapid",
+  "keywords": [ "ip" ]
+}
