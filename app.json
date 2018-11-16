@@ -2,5 +2,13 @@
   "name": "Passport: Twitter Log In",
   "description": "Express 4.x app using Passport.js for authentication with Twitter.",
   "repository": "https://github.com/passport/express-4.x-twitter-example",
-  "keywords": [ "twitter", "login" ]
+  "keywords": [ "twitter", "login" ],
+  "env": {
+    "TWITTER_CONSUMER_KEY": {
+      "description": "A string used to identify this app with Twitter."
+    },
+    "TWITTER_CONSUMER_SECRET": {
+      "description": "A secret used to authenticate this app with Twitter."
+    }
+  }
 }
