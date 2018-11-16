@@ -71,6 +71,10 @@ app.get('/',
 
 app.get('/login',
   function(req, res){
+    console.log('ENV');
+    console.log(process.env);
+    console.log('Headers:');
+    console.log(req.headers)
     res.render('login');
   });
 
