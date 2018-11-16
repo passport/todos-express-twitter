@@ -1,6 +1,6 @@
 {
-  "name": "ifify Public IP Address API",
-  "description": "A RESTful API for obtaining a system's public API address.",
-  "repository": "https://github.com/modulate/ipifyapid",
-  "keywords": [ "ip" ]
+  "name": "Passport.js - Log in with Twitter",
+  "description": "Express 4.x app using Passport.js for authentication with Twitter.",
+  "repository": "https://github.com/passport/express-4.x-twitter-example",
+  "keywords": [ "twitter", "login" ]
 }
