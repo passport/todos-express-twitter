@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-twitter').Strategy;
@@ -19,7 +21,7 @@ if (process.env.DYNO) {
 passport.use(new Strategy({
     consumerKey: process.env['TWITTER_CONSUMER_KEY'],
     consumerSecret: process.env['TWITTER_CONSUMER_SECRET'],
-    callbackURL: '/oauth/callback/twitter.com',
+    callbackURL: '/oauth/callback',
     proxy: trustProxy
   },
   function(token, tokenSecret, profile, cb) {
@@ -88,7 +90,7 @@ app.get('/login',
 app.get('/login/twitter',
   passport.authenticate('twitter'));
 
-app.get('/oauth/callback/twitter.com',
+app.get('/oauth/callback',
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
