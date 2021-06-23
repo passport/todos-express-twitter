@@ -1,10 +1,10 @@
-This example demonstrates how to use [Express](http://expressjs.com/) 4.x and
-[Passport](http://passportjs.org/) to authenticate users using Twitter.  Use
-this example as a starting point for your own web applications.
+This example illustrates how to use [Express](https://expressjs.com) 4.x and
+[Passport](https://www.passportjs.org) to sign users in with [Twitter](https://twitter.com).
+Use this example as a starting point for your own web applications.
 
-## Instructions
+## Quick Start
 
-To install this example on your computer, clone the repository and install
+To get started with this example, clone the repository and install the
 dependencies.
 
 ```bash
@@ -13,16 +13,21 @@ $ cd express-4.x-twitter-example
 $ npm install
 ```
 
-The example uses environment variables to configure the consumer key and
-consumer secret needed to access Twitter's API.  Start the server with those
-variables set to the appropriate credentials.
+Once credentials have been obtained, create a `.env` file and add the following
+environment variables:
 
-```bash
-$ CONSUMER_KEY=__TWITTER_CONSUMER_KEY__ CONSUMER_SECRET=__TWITTER_CONSUMER_SECRET__ node server.js
+```
+TWITTER_CONSUMER_KEY={{INSERT_API_KEY_HERE}}
+TWITTER_CONSUMER_SECRET={{INSERT_API_SECRET_KEY_HERE}}
 ```
 
-Open a web browser and navigate to [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
-to see the example in action.
+Start the server.
+
+```bash
+$ npm start
+```
+
+Navigate to [`http://localhost:3000`](http://localhost:3000).
 
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
