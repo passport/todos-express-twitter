@@ -1,7 +1,7 @@
 {
   "name": "express-4.x-twitter-example",
   "version": "0.0.0",
-  "description": "Express 4.x app using Passport for authentication with Twitter.",
+  "description": "Express 4.x app using Passport for sign in with Twitter.",
   "keywords": [
     "example",
     "express",
@@ -17,15 +17,20 @@
   "bugs": {
     "url": "https://github.com/passport/express-4.x-twitter-example/issues"
   },
+  "scripts": {
+    "start": "node ./bin/www"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.3.5",
     "dotenv": "^8.0.0",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "express-session": "^1.16.1",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
-    "passport-twitter": "^1.0.4"
+    "passport-twitter": "^1.0.4",
+    "sqlite3": "^5.0.2"
   }
 }
