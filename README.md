@@ -13,6 +13,11 @@ $ cd express-4.x-twitter-example
 $ npm install
 ```
 
+This example requires credentials from Twitter, which can be obtained by
+[creating](https://developer.twitter.com/en/docs/apps/overview) an app in the
+developer portal's [App page](https://developer.twitter.com/en/apps).  The
+callback URL of the app should be set to: `http://localhost:3000/oauth/callback/twitter.com`
+
 Once credentials have been obtained, create a `.env` file and add the following
 environment variables:
 
