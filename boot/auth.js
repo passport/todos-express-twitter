@@ -22,7 +22,7 @@ module.exports = function() {
   passport.use(new Strategy({
       consumerKey: process.env['TWITTER_CONSUMER_KEY'],
       consumerSecret: process.env['TWITTER_CONSUMER_SECRET'],
-      callbackURL: '/oauth/callback/twitter.com',
+      callbackURL: '/oauth/callback/twitter',
       //proxy: trustProxy
     },
     function(token, tokenSecret, profile, cb) {

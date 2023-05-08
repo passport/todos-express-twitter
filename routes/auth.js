@@ -10,7 +10,7 @@ router.get('/login', function(req, res, next) {
 
 router.get('/login/federated/twitter.com', passport.authenticate('twitter'));
 
-router.get('/oauth/callback/twitter.com',
+router.get('/oauth/callback/twitter',
   passport.authenticate('twitter', { assignProperty: 'federatedUser', failureRedirect: '/login' }),
   function(req, res, next) {
     db.get('SELECT * FROM federated_credentials WHERE provider = ? AND subject = ?', [
