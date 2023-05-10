@@ -62,7 +62,7 @@ router.get('/login', function(req, res, next) {
   res.render('login');
 });
 
-router.get('/login/federated/twitter', passport.authenticate('facebook'));
+router.get('/login/federated/twitter', passport.authenticate('twitter'));
 
 router.get('/oauth/callback/twitter', passport.authenticate('twitter', {
   successReturnToOrRedirect: '/',
